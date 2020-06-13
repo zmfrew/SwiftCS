@@ -1,0 +1,15 @@
+disabled_rules:
+- identifier_name
+- trailing_whitespace
+opt_in_rules:
+- control_statement
+- empty_count
+- trailing_newline
+- colon
+- comma
+included:
+- SwiftCS
+excluded:
+- SwiftCS/SwiftCSTests
+line_length: 150
+

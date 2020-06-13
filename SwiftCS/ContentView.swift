@@ -1,11 +1,3 @@
-//
-//  ContentView.swift
-//  SwiftCS
-//
-//  Created by Zachary Frew on 6/12/20.
-//  Copyright © 2020 Zachary Frew. All rights reserved.
-//
-
 import SwiftUI
 
 struct ContentView: View {
@@ -14,7 +6,7 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct ContentView_Previews: PreviewProvider { //swiftlint:disable:this type_name
     static var previews: some View {
         ContentView()
     }
