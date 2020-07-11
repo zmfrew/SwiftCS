@@ -6,7 +6,7 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider { //swiftlint:disable:this type_name
+struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
