@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct AppNavigationView: View {
-    private let arr = [
+    private let dataStructures = [
         "linked list",
         "queue",
         "stack",
@@ -10,17 +10,60 @@ struct AppNavigationView: View {
         "binary search tree"
     ]
     
+    private let algorithms = [
+        "bubble sort",
+        "merge sort",
+        "binary search",
+        "insertion sort"
+    ]
+    
+    private let miscellaneous = [
+        "arc",
+        "processes",
+        "threads",
+        "dispatch queues"
+    ]
+    
     var body: some View {
         NavigationView {
-            List(arr, id: \.self) { item in
-                NavigationLink(destination: ContentView(text: item)) {
-                    Image(systemName: "bolt.heart")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 40, height: 25)
-                    Text(item)
+            List {
+                Section(header: Text("Data Structures")) {
+                    ForEach(dataStructures, id: \.self) { dataStructure in
+                        NavigationLink(destination: ContentView(text: dataStructure)) {
+                            Image(systemName: "bolt.heart")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 40, height: 25)
+                            Text(dataStructure)
+                        }
+                    }
+                }
+                
+                Section(header: Text("Algorithms")) {
+                    ForEach(algorithms, id: \.self) { algorithm in
+                        NavigationLink(destination: ContentView(text: algorithm)) {
+                            Image(systemName: "heart")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 40, height: 25)
+                            Text(algorithm)
+                        }
+                    }
+                }
+                
+                Section(header: Text("Miscellaneous")) {
+                    ForEach(miscellaneous, id: \.self) { item in
+                        NavigationLink(destination: ContentView(text: item)) {
+                            Image(systemName: "heart.circle")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 40, height: 25)
+                            Text(item)
+                        }
+                    }
                 }
             }
+            .navigationTitle(Text("SwiftCS"))
         }
     }
 }
