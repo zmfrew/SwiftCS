@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct NavigationView: View {
+struct AppNavigationView: View {
     private let arr = [
         "linked list",
         "queue",
@@ -13,7 +13,7 @@ struct NavigationView: View {
     var body: some View {
         NavigationView {
             List(arr, id: \.self) { item in
-                NavigationLink(destination: NewView(text: item)) {
+                NavigationLink(destination: ContentView(text: item)) {
                     Image(systemName: "bolt.heart")
                         .resizable()
                         .scaledToFit()
@@ -28,7 +28,7 @@ struct NavigationView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            NavigationView()
+            AppNavigationView()
         }
     }
 }
